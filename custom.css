@@ -1,0 +1,10 @@
+/* Multica custom CSS — injected by multica-custom-css (press Ctrl+R in Multica to reload) */
+
+/* Widen the reading column from 896px (Tailwind max-w-4xl) on wide screens */
+
+/* Chat page: messages, composer and banners */
+[class*="@4xl:px-12"] .mx-auto.w-full.max-w-4xl,
+/* Issue page: description, activity and agent comments */
+.mx-auto.w-full.max-w-4xl[class*="max-md:pb-chat-launcher"] {
+  max-width: 1600px !important;
+}
