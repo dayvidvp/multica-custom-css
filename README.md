@@ -2,7 +2,7 @@
 
 Inject your own CSS into the [Multica](https://multica.ai) desktop app on Windows.
 
-The main use case: Multica caps its chat and issue columns at 896px, which leaves most of a widescreen monitor empty. The included `custom.css` widens them to 1600px.
+The main use case: Multica caps its chat and issue columns at 896px, which leaves most of a widescreen monitor empty. The included `custom.css` widens them to 1600px. It also makes board columns fill the window instead of a fixed 280px, and gives card titles room for 3 lines and the full "Waiting for" label.
 
 > Unofficial. Not affiliated with or endorsed by Multica. Tested with Multica Desktop 0.7.1 (Electron 44) on Windows 11.
 

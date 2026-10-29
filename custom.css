@@ -8,3 +8,35 @@
 .mx-auto.w-full.max-w-4xl[class*="max-md:pb-chat-launcher"] {
   max-width: 1600px !important;
 }
+
+/* Board view: columns have a fixed inline width of 280px; let them grow to fill the window.
+   305px is the minimum, so with many columns the board scrolls horizontally. */
+.group\/column.shrink-0.rounded-xl {
+  flex: 1 1 305px !important;
+  width: auto !important;
+  min-width: 305px;
+}
+
+/* Board view: gap between columns from 16px to 10px */
+.flex.flex-1.min-h-0.gap-4.overflow-x-auto:has(> .group\/column) {
+  gap: 10px !important;
+}
+
+/* Board view: card title from 14px to 13px, clamped at 3 lines instead of 2 */
+.group\/column .text-body.font-medium.leading-snug.line-clamp-2 {
+  font-size: 13px !important;
+  line-height: 18px !important;
+  -webkit-line-clamp: 3 !important;
+  line-clamp: 3 !important;
+}
+
+/* Board view: "Waiting for: ..." in the card header is cut off at 144px (max-w-36) */
+.group\/column .max-w-36.truncate.text-micro {
+  max-width: 220px !important;
+}
+
+/* Board view: let the card header wrap, so "Waiting for: ..." moves below the issue key when both don't fit */
+.group\/column .rounded-lg.bg-surface > .flex.items-center.justify-between.gap-2 {
+  flex-wrap: wrap;
+  row-gap: 2px;
+}
