@@ -40,3 +40,28 @@
   flex-wrap: wrap;
   row-gap: 2px;
 }
+
+/* Inbox: the list on the left is 260px by default and can't be dragged past 400px; make it 520px.
+   Chat uses the same panel ids ("list"/"detail"), so match on the inbox list's scroll container. */
+[data-panel]#list:has(.flex-1.min-h-0.overflow-y-auto.outline-none) {
+  min-width: 520px !important;
+}
+
+/* Issue comments that need you (marked by custom.js): amber when you're @mentioned, blue for a question to you.
+   The sticky comment header has its own bg-card; the tint goes on top as a background-image so it stays opaque. */
+[data-comment-block][data-for-me="mention"] {
+  background-color: rgb(245 158 11 / 0.14);
+  box-shadow: inset 3px 0 0 rgb(245 158 11);
+  border-radius: 8px;
+}
+[data-comment-block][data-for-me="question"] {
+  background-color: rgb(59 130 246 / 0.10);
+  box-shadow: inset 3px 0 0 rgb(59 130 246 / 0.8);
+  border-radius: 8px;
+}
+[data-comment-block][data-for-me="mention"] > .sticky.top-0 {
+  background-image: linear-gradient(rgb(245 158 11 / 0.14), rgb(245 158 11 / 0.14));
+}
+[data-comment-block][data-for-me="question"] > .sticky.top-0 {
+  background-image: linear-gradient(rgb(59 130 246 / 0.10), rgb(59 130 246 / 0.10));
+}
